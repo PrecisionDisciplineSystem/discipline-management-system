@@ -2,7 +2,7 @@ const msalConfig = {
     auth: {
         clientId: "8942b408-2646-4bbd-bb4f-7a82226351c2",
         authority: "https://login.microsoftonline.com/9eaa6d01-27d2-4363-9466-ebe0ef39b381",
-        redirectUri: window.location.origin
+        redirectUri: "https://precisiondisciplinesystem.github.io/discipline-management-system/"
     }
 };
 
