@@ -46,3 +46,139 @@ async function signIn() {
     }
 
 }
+function loadGenerator(){
+
+
+    if(!document.getElementById("employeeSelect")){
+        return;
+    }
+
+
+    employees.forEach(employee=>{
+
+        let option =
+        document.createElement("option");
+
+        option.value = employee.employeeNumber;
+
+        option.text =
+        employee.name +
+        " - " +
+        employee.employeeNumber;
+
+
+        employeeSelect.appendChild(option);
+
+    });
+
+
+
+    articles.forEach(article=>{
+
+
+        let option =
+        document.createElement("option");
+
+
+        option.value =
+        article.code;
+
+
+        option.text =
+        article.code +
+        " - " +
+        article.description;
+
+
+        articleSelect.appendChild(option);
+
+
+    });
+
+
+
+    loadProgressions();
+
+}
+
+
+
+function loadProgressions(){
+
+
+    progressionSelect.innerHTML="";
+
+
+    let article =
+    articles.find(
+        a=>a.code === articleSelect.value
+    );
+
+
+    article.progressions.forEach(p=>{
+
+
+        let option =
+        document.createElement("option");
+
+
+        option.text=p;
+
+
+        progressionSelect.appendChild(option);
+
+
+    });
+
+
+}
+
+
+
+function generateDocument(){
+
+
+    let date =
+    new Date()
+    .toISOString()
+    .slice(0,10)
+    .replaceAll("-","");
+
+
+    let article =
+    articleSelect.value;
+
+
+    let progression =
+    progressionSelect.value
+    .toUpperCase();
+
+
+    let filename =
+    date +
+    "-" +
+    article +
+    " " +
+    progression;
+
+
+    document.getElementById("result")
+    .innerText =
+    "Document Created: "
+    + filename;
+
+
+}
+
+
+
+window.onload=function(){
+
+    loadGenerator();
+
+};
+
+articleSelect.addEventListener(
+"change",
+loadProgressions
+);
