@@ -1,6 +1,6 @@
 const msalConfig = {
     auth: {
-        clientId: "PASTE-YOUR-APPLICATION-ID-HERE",
+        clientId: "8942b408-2646-4bbd-bb4f-7a82226351c2",
         authority: "https://login.microsoftonline.com/common",
         redirectUri: window.location.origin
     }
