@@ -1,111 +1,84 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
 
-<meta charset="UTF-8">
-
-<title>
-Precision Discipline System
-</title>
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Precision Discipline System</title>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
 
+<div class="app-container">
 
-<div class="container">
+    <aside class="sidebar">
 
+        <h2>Precision Discipline System</h2>
 
-<h1>
-Precision Discipline System
-</h1>
+        <p id="welcomeUser"></p>
 
+        <hr>
 
-<h2 id="welcomeUser">
-</h2>
+        <button>Dashboard</button>
+        <button>Generate Discipline</button>
+        <button>Employee History</button>
+        <button>Upload Signed Documents</button>
+        <button>Search Documents</button>
 
+        <hr>
 
+        <button onclick="signOut()">Sign Out</button>
 
-<nav>
-
-
-<a href="Pages/Generate.html">
-<button>
-Generate Discipline
-</button>
-</a>
-
-
-<br><br>
+    </aside>
 
 
-<a href="Pages/History.html">
-<button>
-Employee History
-</button>
-</a>
+    <main class="content">
 
+        <h1>Welcome!</h1>
 
-<br><br>
+        <p>
+            Select an option from the menu to get started.
+        </p>
 
+        <br>
 
-<a href="Pages/Upload.html">
-<button>
-Upload Signed Documents
-</button>
-</a>
+        <h3>Future Features</h3>
 
+        <ul>
+            <li>Automatic progression recommendations</li>
+            <li>Employee discipline history</li>
+            <li>Signed document storage</li>
+            <li>Reporting dashboard</li>
+            <li>Location filtering</li>
+        </ul>
 
-<br><br>
-
-
-<button onclick="signOut()">
-Sign Out
-</button>
-
-
-</nav>
-
+    </main>
 
 </div>
 
 
-
 <script src="https://cdn.jsdelivr.net/npm/@azure/msal-browser@2.38.3/lib/msal-browser.min.js"></script>
-
 <script src="script.js"></script>
-
 
 <script>
 
-
-const account =
-msalInstance.getAllAccounts()[0];
-
+const account = msalInstance.getAllAccounts()[0];
 
 if(account){
 
-document.getElementById("welcomeUser")
-.innerText =
-"Welcome " + account.name;
+    document.getElementById("welcomeUser").innerText =
+    "Welcome,\n" + account.name;
 
 }
-
 else{
 
-window.location.href="login.html";
+    window.location.href = "login.html";
 
 }
-
 
 </script>
 
-
 </body>
-
 </html>
