@@ -178,7 +178,12 @@ window.onload=function(){
 
 };
 
-articleSelect.addEventListener(
-"change",
-loadProgressions
-);
+if(document.getElementById("articleSelect")){
+
+    document.getElementById("articleSelect")
+    .addEventListener(
+        "change",
+        loadProgressions
+    );
+
+}
