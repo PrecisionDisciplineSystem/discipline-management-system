@@ -21,28 +21,70 @@ new msal.PublicClientApplication(msalConfig);
 
 
 
+// Check if user is already signed in
+
+function checkLogin(){
+
+
+    const accounts =
+    msalInstance.getAllAccounts();
+
+
+    if(accounts.length > 0){
+
+        return accounts[0];
+
+    }
+
+
+    return null;
+
+}
+
+
+
+
 async function signIn(){
 
 
     try{
 
+
+        const loginResponse =
         await msalInstance.loginPopup({
 
-            scopes:["User.Read"]
+            scopes:[
+                "User.Read"
+            ]
 
         });
+
+
+
+        sessionStorage.setItem(
+            "user",
+            JSON.stringify(loginResponse.account)
+        );
+
 
 
         window.location.href =
         "dashboard.html";
 
+
     }
+
 
     catch(error){
 
+
         console.error(error);
 
-        alert("Login failed.");
+
+        alert(
+        "Login failed."
+        );
+
 
     }
 
@@ -50,11 +92,19 @@ async function signIn(){
 
 
 
+
+
 function signOut(){
+
 
     msalInstance.clearCache();
 
+
+    sessionStorage.clear();
+
+
     window.location.href =
     "login.html";
+
 
 }
