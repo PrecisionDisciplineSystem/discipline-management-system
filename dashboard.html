@@ -3,73 +3,133 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <title>Precision Discipline System</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+
+<title>
+Precision Discipline System
+</title>
+
+<link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
+
 
 <div class="app-container">
 
+
+    <!-- SIDEBAR -->
+
     <aside class="sidebar">
 
-        <h2>Precision Discipline System</h2>
+
+        <h2>
+        Precision Discipline System
+        </h2>
+
 
         <p id="welcomeUser"></p>
 
-        <hr>
-
-        <button>Dashboard</button>
-        <button>Generate Discipline</button>
-        <button>Employee History</button>
-        <button>Upload Signed Documents</button>
-        <button>Search Documents</button>
 
         <hr>
 
-        <button onclick="signOut()">Sign Out</button>
+
+        <button onclick="loadContent('dashboard')">
+            Dashboard
+        </button>
+
+
+        <button onclick="loadContent('generate')">
+            Generate Discipline
+        </button>
+
+
+        <button onclick="loadContent('history')">
+            Employee History
+        </button>
+
+
+        <button onclick="loadContent('upload')">
+            Upload Signed Documents
+        </button>
+
+
+        <button onclick="loadContent('search')">
+            Search Cases
+        </button>
+
+
+        <hr>
+
+
+        <h4>
+        TOOLS
+        </h4>
+
+
+        <button onclick="loadContent('calculator')">
+            Progression Calculator
+        </button>
+
+
+
+        <hr>
+
+
+        <h4>
+        ADMIN
+        </h4>
+
+
+        <button onclick="loadContent('settings')">
+            Settings
+        </button>
+
+
+
+        <hr>
+
+
+        <button onclick="signOut()">
+            Sign Out
+        </button>
+
 
     </aside>
 
 
-    <main class="content">
 
-        <h1>Welcome!</h1>
 
-        <p>
-            Select an option from the menu to get started.
-        </p>
 
-        <br>
+    <!-- MAIN CONTENT -->
 
-        <h3>Future Features</h3>
+    <main class="content" id="mainContent">
 
-        <ul>
-            <li>Automatic progression recommendations</li>
-            <li>Employee discipline history</li>
-            <li>Signed document storage</li>
-            <li>Reporting dashboard</li>
-            <li>Location filtering</li>
-        </ul>
 
     </main>
+
+
 
 </div>
 
 
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/@azure/msal-browser@2.38.3/lib/msal-browser.min.js"></script>
+
 <script src="script.js"></script>
 
-<script>
 
-const account = msalInstance.getAllAccounts()[0];
 
 <script>
+
 
 const account =
 checkLogin();
+
 
 
 if(account){
@@ -78,6 +138,11 @@ if(account){
 document.getElementById("welcomeUser")
 .innerText =
 "Welcome, " + account.name;
+
+
+
+loadContent("dashboard");
+
 
 
 }
@@ -91,6 +156,12 @@ window.location.href =
 
 }
 
+
+
+
 </script>
+
+
 </body>
+
 </html>
