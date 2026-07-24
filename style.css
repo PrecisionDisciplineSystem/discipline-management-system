@@ -84,3 +84,24 @@ hr{
     margin-bottom:25px;
 
 }
+
+.sidebar{
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    overflow-y:auto;
+
+}
+
+
+.content{
+
+    margin-left:300px;
+
+}
