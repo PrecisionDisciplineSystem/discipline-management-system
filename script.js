@@ -167,3 +167,165 @@ function signOut(){
 
 
 }
+
+function loadContent(page){
+
+
+    const content =
+    document.getElementById("mainContent");
+
+
+
+    switch(page){
+
+
+        case "dashboard":
+
+            content.innerHTML = `
+
+            <h1>
+            Dashboard
+            </h1>
+
+            <p>
+            Welcome to Precision Discipline System.
+            </p>
+
+
+            <h3>
+            Action Required
+            </h3>
+
+
+            <p>
+            No documents currently require attention.
+            </p>
+
+            `;
+
+        break;
+
+
+
+        case "generate":
+
+            content.innerHTML = `
+
+            <h1>
+            Generate Discipline
+            </h1>
+
+
+            <p>
+            Discipline document generation will be built here.
+            </p>
+
+            `;
+
+        break;
+
+
+
+
+        case "history":
+
+            content.innerHTML = `
+
+            <h1>
+            Employee History
+            </h1>
+
+
+            <p>
+            Employee records will appear here.
+            </p>
+
+            `;
+
+        break;
+
+
+
+
+        case "upload":
+
+            content.innerHTML = `
+
+            <h1>
+            Upload Signed Documents
+            </h1>
+
+
+            <p>
+            Signed document uploads will appear here.
+            </p>
+
+            `;
+
+        break;
+
+
+
+
+        case "search":
+
+            content.innerHTML = `
+
+            <h1>
+            Search Cases
+            </h1>
+
+
+            <p>
+            Case search will be built here.
+            </p>
+
+            `;
+
+        break;
+
+
+
+
+        case "calculator":
+
+            content.innerHTML = `
+
+            <h1>
+            Progression Calculator
+            </h1>
+
+
+            <p>
+            Progression calculator will be built here.
+            </p>
+
+            `;
+
+        break;
+
+
+
+
+        case "settings":
+
+            content.innerHTML = `
+
+            <h1>
+            Settings
+            </h1>
+
+
+            <p>
+            Admin settings will be built here.
+            </p>
+
+            `;
+
+        break;
+
+
+    }
+
+
+}
